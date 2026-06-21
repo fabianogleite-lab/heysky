@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heysky Energia Solar | Economia Real na sua Conta de Luz | Belo Horizonte MG</title>
+<meta name="description" content="Heysky Energia Solar em BH. Calcule agora quanto você pode economizar com energia solar fotovoltaica. Financiamento facilitado, instalação em até 2 dias. Franquia Power Mais.">
+<meta name="keywords" content="energia solar belo horizonte, painel solar BH, economia conta de luz, energia solar residencial, energia solar comercial, energia fotovoltaica MG, financiamento energia solar, Power Mais">
+<meta property="og:title" content="Heysky Energia Solar — Economize até 95% na conta de luz">
+<meta property="og:description" content="Calcule sua economia agora. Instalação em BH e região. Financiamento em até 120x sem entrada.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://heysky.com.br">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Heysky Energia Solar",
+  "description": "Energia solar fotovoltaica residencial e comercial em Belo Horizonte MG",
+  "telephone": "+55-31-9831-40497",
+  "address": { "@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "addressCountry": "BR" },
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "sameAs": ["https://wa.me/5531983140497"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Quanto custa instalar energia solar em BH?", "acceptedAnswer": { "@type": "Answer", "text": "Um sistema residencial médio em BH custa entre R$ 15.000 e R$ 35.000. Com financiamento em até 120x, a parcela fica abaixo da economia mensal gerada desde o 1º mês." } },
+    { "@type": "Question", "name": "Em quanto tempo o sistema se paga?", "acceptedAnswer": { "@type": "Answer", "text": "O payback médio em Minas Gerais é de 4 a 6 anos. Após esse período, toda a energia gerada é lucro puro por mais 20 a 25 anos." } },
+    { "@type": "Question", "name": "A energia solar funciona em dias nublados?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Os painéis fotovoltaicos geram energia com luz difusa. Em dias nublados, a eficiência reduz para 20-30%, mas o sistema continua funcionando normalmente." } },
+    { "@type": "Question", "name": "Precisa de manutenção?", "acceptedAnswer": { "@type": "Answer", "text": "A manutenção é mínima: limpeza dos painéis 1-2x por ano. Os inversos têm garantia de 5-10 anos e os painéis de 25 anos de performance." } }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --sol: #F5A623;
+  --sol-deep: #E8891A;
+  --energy: #1A6B3C;
+  --energy-light: #22C55E;
+  --sky: #0D4F8B;
+  --sky-light: #2E7DD1;
+  --text: #1a1a2e;
+  --text-muted: #5a6070;
+  --bg: #ffffff;
+  --bg-warm: #FDFAF5;
+  --bg-dark: #0d1520;
+  --border: rgba(0,0,0,0.08);
+  --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+
+/* ── NAV ── */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 60px;
+}
+.nav-logo { font-weight: 800; font-size: 1.3rem; color: var(--sol-deep); letter-spacing: -0.5px; }
+.nav-logo span { color: var(--energy); }
+.nav-cta { background: var(--sol); color: var(--text); font-weight: 700; font-size: 0.85rem; padding: 8px 18px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--sol-deep); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh; padding: 100px 5vw 60px;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  background: linear-gradient(135deg, #0d1520 0%, #0D4F8B 60%, #1A6B3C 100%);
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(245,166,35,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-badge { display: inline-block; background: rgba(245,166,35,0.2); color: var(--sol); font-size: 0.78rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(245,166,35,0.3); margin-bottom: 1.5rem; letter-spacing: 1px; }
+#hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: #fff; line-height: 1.1; max-width: 680px; margin-bottom: 1.25rem; }
+#hero h1 em { color: var(--sol); font-style: normal; }
+.hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 520px; margin-bottom: 2.5rem; }
+
+/* ── CALCULADORA HERO ── */
+.calc-card {
+  background: rgba(255,255,255,0.97); border-radius: var(--radius);
+  padding: 2rem; max-width: 480px; width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.calc-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; }
+.calc-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+.calc-input-wrap { display: flex; align-items: center; background: #f7f8fa; border: 2px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; transition: border-color 0.2s; }
+.calc-input-wrap:focus-within { border-color: var(--sol); }
+.calc-prefix { padding: 0 14px; font-size: 1.1rem; font-weight: 700; color: var(--text-muted); }
+.calc-input { flex: 1; border: none; background: none; font-size: 1.4rem; font-weight: 700; padding: 12px 0; color: var(--text); outline: none; min-width: 0; }
+.calc-select { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 0.9rem; background: #f7f8fa; margin-bottom: 1.25rem; outline: none; cursor: pointer; }
+.calc-btn { width: 100%; background: var(--sol); color: var(--text); font-weight: 800; font-size: 1rem; padding: 14px; border: none; border-radius: 10px; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+.calc-btn:hover { background: var(--sol-deep); }
+.calc-btn:active { transform: scale(0.98); }
+.calc-results { display: none; margin-top: 1.25rem; }
+.calc-results.show { display: block; }
+.calc-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
+.calc-stat { background: #f7f8fa; border-radius: 10px; padding: 12px; text-align: center; }
+.calc-stat-val { font-size: 1.4rem; font-weight: 800; color: var(--energy); }
+.calc-stat-lbl { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
+.calc-stat.sun .calc-stat-val { color: var(--sol-deep); }
+.calc-stat.sky .calc-stat-val { color: var(--sky-light); }
+.calc-wa { display: flex; align-items: center; gap: 8px; background: #25D366; color: #fff; font-weight: 700; font-size: 0.9rem; padding: 12px 16px; border-radius: 10px; text-decoration: none; justify-content: center; transition: background 0.2s; }
+.calc-wa:hover { background: #20bd5a; }
+
+/* ── SECTIONS ── */
+.section { padding: 80px 5vw; }
+.section-alt { background: var(--bg-warm); }
+.section-dark { background: var(--bg-dark); color: #fff; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 0.75rem; }
+.section-sub { color: var(--text-muted); max-width: 560px; margin-bottom: 3rem; }
+.section-dark .section-sub { color: rgba(255,255,255,0.6); }
+
+/* ── COMO FUNCIONA ── */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.step { display: flex; flex-direction: column; gap: 1rem; }
+.step-num { width: 48px; height: 48px; border-radius: 12px; background: var(--sol); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; color: var(--text); flex-shrink: 0; }
+.step h3 { font-size: 1.1rem; font-weight: 700; }
+.step p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ── BENEFÍCIOS ── */
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.benefit { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.benefit-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.benefit h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.benefit p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ── TIPOS DE SISTEMA ── */
+.systems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.sys-card { border-radius: var(--radius); padding: 2rem; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+.sys-card.residencial { background: linear-gradient(135deg, #1a2f1a, #1A6B3C); }
+.sys-card.comercial { background: linear-gradient(135deg, #0d2040, #0D4F8B); }
+.sys-card.rural { background: linear-gradient(135deg, #2a1800, #E8891A); }
+.sys-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; background: rgba(255,255,255,0.15); color: #fff; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.sys-card h3 { color: #fff; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+.sys-card p { color: rgba(255,255,255,0.7); font-size: 0.87rem; margin-bottom: 1.25rem; }
+.sys-eco { font-size: 2rem; font-weight: 900; color: var(--sol); margin-bottom: 0.25rem; }
+.sys-eco-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
+.sys-cta { display: inline-flex; align-items: center; gap: 6px; color: #fff; font-weight: 700; font-size: 0.85rem; text-decoration: none; background: rgba(255,255,255,0.12); padding: 10px 16px; border-radius: 8px; transition: background 0.2s; }
+.sys-cta:hover { background: rgba(255,255,255,0.2); }
+
+/* ── PAYBACK VISUAL ── */
+.payback-wrap { max-width: 640px; }
+.payback-bar { margin-bottom: 1.25rem; }
+.payback-bar-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; font-weight: 600; }
+.payback-bar-track { height: 12px; background: rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; }
+.payback-bar-fill { height: 100%; border-radius: 6px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+.payback-bar-fill.retorno { background: var(--sol); width: 0; }
+.payback-bar-fill.energia { background: var(--energy-light); width: 0; }
+.payback-bar-fill.valorizacao { background: var(--sky-light); width: 0; }
+.payback-legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; }
+.payback-lg { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+.payback-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-btn { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.25rem 0; text-align: left; }
+.faq-btn h3 { font-size: 1rem; font-weight: 600; color: var(--text); }
+.faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; color: var(--sol-deep); transition: transform 0.25s, background 0.25s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--sol); color: var(--text); }
+.faq-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.faq-item.open .faq-body { grid-template-rows: 1fr; }
+.faq-body-inner { overflow: hidden; }
+.faq-body-inner p { padding: 0 0 1.25rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.faq-cta-prompt { display: block; font-style: italic; color: var(--sol-deep); font-weight: 600; font-size: 0.875rem; margin: 0.875rem 0 0.625rem; padding: 0.625rem 1rem; background: rgba(245,166,35,0.06); border-left: 3px solid var(--sol); border-radius: 0 8px 8px 0; line-height: 1.6; }
+
+/* ── NÚMEROS IMPACTO ── */
+.impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; text-align: center; }
+.impact-stat { }
+.impact-num { font-size: 2.5rem; font-weight: 900; color: var(--sol); line-height: 1; }
+.impact-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+/* ── FOOTER ── */
+footer { background: var(--bg-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 2.5rem 5vw; font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.06); }
+footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+footer strong { color: rgba(255,255,255,0.7); }
+
+/* ── SMART CTA ── */
+#smart-cta {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(120px);
+  z-index: 200; width: min(460px, calc(100vw - 32px));
+  background: #fff; border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+  opacity: 0; pointer-events: none;
+}
+#smart-cta.visible { transform: translateX(-50%) translateY(0); opacity: 1; pointer-events: all; }
+.scta-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--sol), var(--sol-deep)); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.scta-msg { flex: 1; font-size: 0.85rem; color: var(--text); }
+.scta-msg strong { display: block; font-weight: 700; margin-bottom: 2px; }
+.scta-btn { flex-shrink: 0; background: #25D366; color: #fff; font-weight: 700; font-size: 0.78rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+.scta-close { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 18px; flex-shrink: 0; line-height: 1; padding: 4px; }
+
+/* ── SIDEBAR PROTEОS ── */
+#proteOS-sidebar {
+  position: fixed; top: 0; right: 0; height: 100vh; z-index: 300;
+  display: flex; flex-direction: row; pointer-events: none;
+}
+.sidebar-tab {
+  position: absolute; right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  background: linear-gradient(180deg, var(--sol) 0%, var(--sol-deep) 100%);
+  border-radius: 12px 0 0 12px;
+  padding: 18px 0;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  cursor: pointer; pointer-events: all;
+  transition: right 0.35s;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  border: none; color: var(--text);
+}
+#proteOS-sidebar.open .sidebar-tab { right: 280px; }
+.sidebar-tab-icon { font-size: 1rem; }
+.sidebar-tab-label { font-size: 9px; font-weight: 800; letter-spacing: 0.5px; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
+.sidebar-panel {
+  position: absolute; right: 0; top: 0; height: 100%;
+  width: 280px;
+  background: rgba(13,21,32,0.97);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(255,255,255,0.07);
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none; overflow: hidden;
+}
+#proteOS-sidebar.open .sidebar-panel { transform: translateX(0); pointer-events: all; }
+.sb-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.sb-brand { display: flex; align-items: center; gap: 10px; }
+.sb-brand-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--energy-light); box-shadow: 0 0 6px var(--energy-light); }
+.sb-brand-name { color: #fff; font-weight: 700; font-size: 14px; }
+.sb-brand-sub { color: rgba(255,255,255,0.4); font-size: 11px; }
+.sb-close { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 16px; padding: 4px; }
+.sb-links { padding: 12px; display: flex; flex-direction: column; gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.sb-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; padding: 8px 10px; border-radius: 8px; transition: background 0.15s; }
+.sb-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.sb-link.highlight { background: rgba(245,166,35,0.2); color: #fbbf24; font-weight: 700; }
+.sb-calc-mini { padding: 14px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.sb-calc-mini label { font-size: 11px; color: rgba(255,255,255,0.4); display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+.sb-calc-mini-wrap { display: flex; gap: 6px; }
+.sb-calc-inp { flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 10px; color: #fff; font-size: 13px; outline: none; min-width: 0; }
+.sb-calc-go { background: var(--sol); border: none; border-radius: 8px; padding: 8px 12px; color: var(--text); font-weight: 700; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.sb-calc-result { font-size: 11px; color: var(--energy-light); margin-top: 6px; font-weight: 600; }
+.sb-chat { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.sb-msgs { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.sb-msg { max-width: 85%; padding: 8px 12px; border-radius: 12px; font-size: 13px; line-height: 1.45; }
+.sb-msg.bot { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); align-self: flex-start; border-radius: 4px 12px 12px 12px; }
+.sb-msg.user { background: var(--sol); color: var(--text); align-self: flex-end; border-radius: 12px 4px 12px 12px; }
+.sb-msg-cta { display: block; margin-top: 8px; color: #fbbf24; font-size: 12px; font-weight: 700; text-decoration: none; }
+.sb-input-wrap { display: flex; gap: 6px; padding: 10px 12px; border-top: 1px solid rgba(255,255,255,0.08); }
+.sb-input { flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 10px; color: #fff; font-size: 13px; outline: none; }
+.sb-input::placeholder { color: rgba(255,255,255,0.3); }
+.sb-send { background: var(--sol); border: none; border-radius: 8px; padding: 8px 12px; color: var(--text); cursor: pointer; font-size: 14px; }
+
+@media (max-width: 640px) {
+  .calc-result-grid { grid-template-columns: 1fr; }
+  .systems-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="nav-logo">Heysky<span>.</span></div>
+  <a class="nav-cta" href="https://wa.me/5531983140497?text=Quero+um+orçamento+de+energia+solar" target="_blank" rel="noopener">Simular grátis</a>
+</nav>
+
+<!-- ══ HERO + CALCULADORA ══ -->
+<section id="hero" data-section="hero">
+  <div class="hero-badge">⚡ Franquia Power Mais — BH e Região</div>
+  <h1>Sua conta de luz pode cair <em>até 95%</em> a partir do 1º mês</h1>
+  <p class="hero-sub">Energia solar fotovoltaica instalada em até 2 dias. Financiamento em 120x com parcela menor que a sua economia mensal. Sem entrada.</p>
+
+  <div class="calc-card" id="calc-hero">
+    <div class="calc-title">☀️ Calcule sua economia agora</div>
+    <label class="calc-label" for="conta-valor">Valor médio da sua conta de luz</label>
+    <div class="calc-input-wrap">
+      <span class="calc-prefix">R$</span>
+      <input class="calc-input" id="conta-valor" type="number" min="100" max="50000" value="400" inputmode="numeric">
+    </div>
+    <label class="calc-label" for="tipo-consumo">Tipo de instalação</label>
+    <select class="calc-select" id="tipo-consumo">
+      <option value="residencial">Residencial</option>
+      <option value="comercial">Comercial / Empresa</option>
+      <option value="rural">Rural / Agro</option>
+    </select>
+    <button class="calc-btn" id="calc-btn">Calcular minha economia →</button>
+
+    <div class="calc-results" id="calc-results">
+      <div class="calc-result-grid">
+        <div class="calc-stat">
+          <div class="calc-stat-val" id="eco-mensal">—</div>
+          <div class="calc-stat-lbl">Economia/mês</div>
+        </div>
+        <div class="calc-stat sun">
+          <div class="calc-stat-val" id="eco-anual">—</div>
+          <div class="calc-stat-lbl">Economia/ano</div>
+        </div>
+        <div class="calc-stat sky">
+          <div class="calc-stat-val" id="payback-anos">—</div>
+          <div class="calc-stat-lbl">Payback</div>
+        </div>
+        <div class="calc-stat">
+          <div class="calc-stat-val" id="co2-evitado">—</div>
+          <div class="calc-stat-lbl">CO₂ evitado/ano</div>
+        </div>
+      </div>
+      <a class="calc-wa" id="calc-wa-btn" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.061 23.938l6.197-1.445C7.895 23.437 9.905 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.493-5.2-1.355l-.374-.213-3.677.858.913-3.586-.239-.378C2.6 15.73 2 13.923 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Receber proposta no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACTO ══ -->
+<section id="numeros" class="section section-dark" data-section="numeros">
+  <h2 class="section-title" style="color:#fff">Números que importam</h2>
+  <p class="section-sub">Resultado real de quem já fez a migração para o sol.</p>
+  <div class="impact-grid">
+    <div class="impact-stat">
+      <div class="impact-num">95%</div>
+      <div class="impact-lbl">Redução na conta de luz</div>
+    </div>
+    <div class="impact-stat">
+      <div class="impact-num">4–6</div>
+      <div class="impact-lbl">Anos para payback em MG</div>
+    </div>
+    <div class="impact-stat">
+      <div class="impact-num">25</div>
+      <div class="impact-lbl">Anos de garantia nos painéis</div>
+    </div>
+    <div class="impact-stat">
+      <div class="impact-num">2 dias</div>
+      <div class="impact-lbl">Tempo médio de instalação</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMO FUNCIONA ══ -->
+<section id="como-funciona" class="section" data-section="como-funciona">
+  <h2 class="section-title">Como funciona a energia solar</h2>
+  <h3 class="section-sub" style="font-weight:400">Do telhado ao bolso: 4 passos simples para gerar sua própria energia elétrica.</h3>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Visita técnica gratuita</h3>
+        <h4 style="font-weight:400; font-size:0.87rem; color:var(--text-muted)">Analisamos o telhado, a orientação solar e o consumo médio para dimensionar o sistema ideal para você.</h4>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Proposta e financiamento</h3>
+        <h4 style="font-weight:400; font-size:0.87rem; color:var(--text-muted)">Apresentamos o projeto com ROI calculado. Aprovação de crédito em até 24h, parcelas abaixo da sua conta atual.</h4>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Instalação em 2 dias</h3>
+        <h4 style="font-weight:400; font-size:0.87rem; color:var(--text-muted)">Equipe certificada instala os painéis e o inversor. Cuidamos de toda a homologação com a CEMIG.</h4>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h3>Economia imediata</h3>
+        <h4 style="font-weight:400; font-size:0.87rem; color:var(--text-muted)">Conta de luz cai na primeira fatura. O excedente vira crédito na concessionária. Monitoramento em tempo real pelo app.</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TIPOS DE SISTEMA ══ -->
+<section id="sistemas" class="section section-alt" data-section="sistemas">
+  <h2 class="section-title">Solução para cada perfil</h2>
+  <h3 class="section-sub" style="font-weight:400">Residencial, comercial ou rural — dimensionamos o sistema certo para o seu consumo.</h3>
+  <div class="systems-grid">
+    <div class="sys-card residencial">
+      <div class="sys-badge">Residencial</div>
+      <h3>Casa e Apartamento</h3>
+      <p>Para contas acima de R$ 250/mês. Sistemas de 3 kWp a 15 kWp cobrem 100% do consumo médio.</p>
+      <div class="sys-eco">95%</div>
+      <div class="sys-eco-lbl">economia típica na conta</div>
+      <a class="sys-cta" href="https://wa.me/5531983140497?text=Quero+solar+residencial" target="_blank" rel="noopener">Simular meu caso →</a>
+    </div>
+    <div class="sys-card comercial">
+      <div class="sys-badge">Comercial</div>
+      <h3>Empresa e Indústria</h3>
+      <p>Para contas acima de R$ 1.000/mês. Payback acelerado com dedução fiscal IRPJ/CSLL.</p>
+      <div class="sys-eco">80–90%</div>
+      <div class="sys-eco-lbl">redução no custo de energia</div>
+      <a class="sys-cta" href="https://wa.me/5531983140497?text=Quero+solar+comercial+para+minha+empresa" target="_blank" rel="noopener">Falar com especialista →</a>
+    </div>
+    <div class="sys-card rural">
+      <div class="sys-badge">Rural / Agro</div>
+      <h3>Fazenda e Sítio</h3>
+      <p>Bombeamento de água, irrigação e eletrificação rural. Geração distribuída com crédito acumulado.</p>
+      <div class="sys-eco">Zero</div>
+      <div class="sys-eco-lbl">custo de energia no campo</div>
+      <a class="sys-cta" href="https://wa.me/5531983140497?text=Quero+solar+para+propriedade+rural" target="_blank" rel="noopener">Ver soluções rurais →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PAYBACK VISUAL ══ -->
+<section id="retorno" class="section section-dark" data-section="retorno">
+  <h2 class="section-title" style="color:#fff">Por que agora é o melhor momento</h2>
+  <p class="section-sub">Energia da CEMIG sobe todo ano. Quanto mais você espera, mais paga.</p>
+  <div class="payback-wrap">
+    <div class="payback-bar">
+      <div class="payback-bar-label">
+        <span style="color:rgba(255,255,255,0.8)">Retorno do investimento</span>
+        <span style="color:var(--sol)">4–6 anos</span>
+      </div>
+      <div class="payback-bar-track"><div class="payback-bar-fill retorno" id="pb-retorno"></div></div>
+    </div>
+    <div class="payback-bar">
+      <div class="payback-bar-label">
+        <span style="color:rgba(255,255,255,0.8)">Vida útil do sistema</span>
+        <span style="color:var(--energy-light)">25+ anos</span>
+      </div>
+      <div class="payback-bar-track"><div class="payback-bar-fill energia" id="pb-energia"></div></div>
+    </div>
+    <div class="payback-bar">
+      <div class="payback-bar-label">
+        <span style="color:rgba(255,255,255,0.8)">Valorização do imóvel</span>
+        <span style="color:var(--sky-light)">+8% na avaliação</span>
+      </div>
+      <div class="payback-bar-track"><div class="payback-bar-fill valorizacao" id="pb-val"></div></div>
+    </div>
+    <div class="payback-legend">
+      <div class="payback-lg"><div class="payback-dot" style="background:var(--sol)"></div>Anos de investimento</div>
+      <div class="payback-lg"><div class="payback-dot" style="background:var(--energy-light)"></div>Anos de lucro puro</div>
+      <div class="payback-lg"><div class="payback-dot" style="background:var(--sky-light)"></div>Mais-valia do imóvel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFÍCIOS ══ -->
+<section id="beneficios" class="section" data-section="beneficios">
+  <h2 class="section-title">Por que escolher a Heysky</h2>
+  <h3 class="section-sub" style="font-weight:400">Tecnologia, suporte e compromisso com o seu resultado.</h3>
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-icon">🔋</div>
+      <h3>Equipamentos Tier 1</h3>
+      <p>Painéis monocristalinos de alta eficiência (21–23%). Inversores com Wi-Fi e monitoramento online.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">📋</div>
+      <h3>Tudo incluído no preço</h3>
+      <p>Projeto elétrico, estrutura de fixação, cabeamento, instalação, homologação CEMIG e ANEEL.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">💳</div>
+      <h3>Financiamento 120x</h3>
+      <p>Parcelas menores que a sua economia mensal atual. Aprovação em 24h, sem burocracia.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">📡</div>
+      <h3>Monitoramento em tempo real</h3>
+      <p>App dedicado mostra geração, consumo e créditos acumulados. Alertas automáticos de performance.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🛡️</div>
+      <h3>25 anos de garantia</h3>
+      <p>Garantia de performance nos painéis. 5–10 anos nos inversores. Assistência técnica local em BH.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🌱</div>
+      <h3>Impacto ambiental real</h3>
+      <p>Sistema médio evita 2–4 toneladas de CO₂ por ano. Crédito de carbono monitorizável.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" class="section section-alt" data-section="faq">
+  <h2 class="section-title">Perguntas frequentes sobre energia solar</h2>
+  <h3 class="section-sub" style="font-weight:400">Tudo o que você precisa saber antes de instalar painéis fotovoltaicos.</h3>
+
+  <div class="faq-list" id="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Quanto custa instalar energia solar em Belo Horizonte?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Um sistema residencial médio em BH custa entre R$ 15.000 e R$ 35.000 dependendo do consumo. Com financiamento em 120x, a parcela fica em média R$ 280–400/mês — abaixo da sua conta atual. O sistema gera energia por 25 anos, gerando lucro puro após o payback.</p>
+        <span class="faq-cta-prompt">Me diga o valor da sua conta de luz e eu calculo o custo exato do sistema para a sua casa.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Em quanto tempo o sistema de energia solar se paga (payback)?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Em Minas Gerais, o payback médio é de 4 a 6 anos — um dos melhores do Brasil pela alta irradiação solar de BH. Após esse período, toda a energia gerada é lucro puro por mais 18 a 20 anos. Isso equivale a um retorno de 15–25% ao ano, muito acima de qualquer investimento financeiro conservador.</p>
+        <span class="faq-cta-prompt">Quer ver o payback calculado para o seu consumo específico? Manda o valor da sua conta aqui.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>A energia solar funciona em dias nublados e chuvosos?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Sim! Os painéis fotovoltaicos geram energia com luz difusa, não apenas luz direta. Em dias nublados, a eficiência cai para 20–30%, mas o sistema continua funcionando. BH tem média de 320 dias de sol por ano — uma das melhores do Brasil para solar. A energia excedente dos dias de sol fica como crédito para os dias nublados.</p>
+        <span class="faq-cta-prompt">Ficou curioso sobre como o sistema se comporta no clima de BH? Me manda uma mensagem e explico com os dados da sua região.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Precisa de manutenção? Qual é o custo?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>A manutenção é mínima: apenas limpeza dos painéis 1 a 2 vezes por ano (pode ser feita com mangueira simples). Os inversores têm garantia de 5 a 10 anos e os painéis garantia de performance de 25 anos. Não há peças móveis no sistema — praticamente zero manutenção comparado a um ar-condicionado ou gerador.</p>
+        <span class="faq-cta-prompt">Quer saber o custo total de propriedade do sistema ao longo de 25 anos? É mais barato do que você imagina.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Posso financiar sem entrada e como funciona a aprovação?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Sim, financiamos em até 120x sem entrada. Trabalhamos com linha de crédito específica para energia solar (juros menores que crédito pessoal). Aprovação em até 24h com análise simplificada. As parcelas médias ficam entre R$ 280 e R$ 450 — geralmente abaixo da sua conta de luz atual, ou seja, você já sai no lucro desde o 1º mês.</p>
+        <span class="faq-cta-prompt">Me diz o valor da sua conta atual e eu verifico o perfil de crédito para você. Geralmente aprovamos em 24h.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Qual é o prazo de instalação após a aprovação?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>A instalação física leva em média 1 a 2 dias. Após isso, solicitamos a conexão à rede na CEMIG — esse processo leva de 30 a 90 dias dependendo da demanda da concessionária. A energia começa a ser gerada já no dia da instalação, mas a compensação de créditos começa depois da conexão oficial à rede.</p>
+        <span class="faq-cta-prompt">Quer garantir vaga na próxima agenda de instalação? As datas costumam esgotar rápido aqui em BH.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>A energia solar valoriza o imóvel? Quanto?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Estudos do mercado imobiliário brasileiro mostram que casas com energia solar vendem 8–12% mais caro e ficam menos tempo paradas no mercado. Para um imóvel de R$ 500.000, isso representa R$ 40.000–60.000 de valorização imediata — frequentemente superior ao custo de instalação do sistema.</p>
+        <span class="faq-cta-prompt">Se você está pensando em vender o imóvel no futuro, instalar solar agora pode ser o melhor investimento que você faz. Quer calcular?</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Meu telhado tem capacidade estrutural para os painéis?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Na grande maioria dos casos, sim. Os painéis modernos pesam entre 15–20 kg/m² — equivalente a 2–3 camadas de telha. Telhados em fibrocimento, cerâmica, metálico ou laje são todos compatíveis. Nossa visita técnica gratuita avalia a estrutura e garante que o projeto seja seguro. Se for necessário reforço, já incluímos no orçamento.</p>
+        <span class="faq-cta-prompt">Manda uma foto do seu telhado pelo WhatsApp e já verifico a viabilidade para você hoje.</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>O sistema precisa de bateria? O que acontece quando falta luz?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>O sistema padrão (on-grid) não precisa de bateria e usa a rede da CEMIG como "bateria infinita" — energia excedente vai para a rede e você recebe créditos. Se quiser independência total (off-grid ou híbrido), adicionamos baterias ao projeto. Durante quedas de luz, o sistema padrão desliga automaticamente por segurança (norma ANEEL). Sistemas com bateria continuam funcionando.</p>
+        <span class="faq-cta-prompt">Para a maioria das casas em BH, o sistema on-grid é suficiente e mais barato. Quer saber qual é o ideal para você?</span>
+      </div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" aria-expanded="false">
+        <h3>Quais são os incentivos fiscais para energia solar no Brasil?</h3>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Pessoa física: isenção de ICMS na energia compensada (Convênio ICMS 16/2015) e isenção de PIS/COFINS. Pessoa jurídica: depreciação acelerada do sistema (benefício fiscal imediato no IRPJ/CSLL) e isenção de IPI para painéis. Financiamentos pelo BNDES e BNB têm taxas subsidiadas. No total, os incentivos podem reduzir o custo efetivo do sistema em 20–30%.</p>
+        <span class="faq-cta-prompt">Se você tem empresa, os benefícios fiscais podem tornar o payback ainda mais rápido. Me diga o CNPJ e analiso o cenário.</span>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SIDEBAR PROTEОS ══ -->
+<aside id="proteOS-sidebar" aria-label="ProteOS — Assistente Heysky Energia">
+  <button class="sidebar-tab" id="sidebar-tab" aria-label="Abrir assistente ProteOS">
+    <span class="sidebar-tab-icon">☀️</span>
+    <span class="sidebar-tab-label">ProteOS</span>
+  </button>
+  <div class="sidebar-panel">
+    <div class="sb-header">
+      <div class="sb-brand">
+        <div class="sb-brand-dot"></div>
+        <div>
+          <div class="sb-brand-name">ProteOS</div>
+          <div class="sb-brand-sub">Heysky Energia Solar</div>
+        </div>
+      </div>
+      <button class="sb-close" id="sb-close" aria-label="Fechar">✕</button>
+    </div>
+    <nav class="sb-links">
+      <a class="sb-link highlight" href="https://wa.me/5531983140497?text=Quero+orçamento+de+energia+solar" target="_blank" rel="noopener">⚡ Orçamento grátis</a>
+      <a class="sb-link" href="#como-funciona">Como funciona</a>
+      <a class="sb-link" href="#sistemas">Meu perfil</a>
+      <a class="sb-link" href="#retorno">Payback / Retorno</a>
+      <a class="sb-link" href="#faq">Dúvidas</a>
+    </nav>
+    <div class="sb-calc-mini">
+      <label>Simulação rápida — conta de luz</label>
+      <div class="sb-calc-mini-wrap">
+        <input class="sb-calc-inp" id="sb-calc-inp" type="number" placeholder="R$ 400" min="100" max="50000">
+        <button class="sb-calc-go" id="sb-calc-go">Calcular</button>
+      </div>
+      <div class="sb-calc-result" id="sb-calc-result" style="display:none"></div>
+    </div>
+    <div class="sb-chat">
+      <div class="sb-msgs" id="sb-msgs">
+        <div class="sb-msg bot">Olá! Sou o ProteOS da Heysky. Qual o valor médio da sua conta de luz?</div>
+      </div>
+      <div class="sb-input-wrap">
+        <input class="sb-input" id="sb-input" type="text" placeholder="Tire sua dúvida..." autocomplete="off" maxlength="200">
+        <button class="sb-send" id="sb-send" aria-label="Enviar">➤</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ══ SMART CTA ══ -->
+<div id="smart-cta" role="alertdialog" aria-live="polite" aria-label="Oferta especial">
+  <div class="scta-avatar">☀️</div>
+  <div class="scta-msg">
+    <strong id="scta-msg-title">Calcule sua economia agora</strong>
+    <span id="scta-msg-body">Simulação gratuita, sem compromisso.</span>
+  </div>
+  <a id="scta-btn" class="scta-btn" href="https://wa.me/5531983140497?text=Quero+simular+economia+solar" target="_blank" rel="noopener">WhatsApp</a>
+  <button class="scta-close" id="scta-close" aria-label="Fechar">×</button>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p><strong>Heysky Energia Solar</strong> — Franquia Power Mais | BH e Região Metropolitana</p>
+  <p style="margin-top:6px">Responsável: Fabianogleite (PF) | CNPJ da franquia: Power Mais</p>
+  <p style="margin-top:6px"><a href="https://wa.me/5531983140497">WhatsApp</a> · <a href="mailto:contato@podiumtec.com.br">contato@podiumtec.com.br</a></p>
+  <p style="margin-top:16px; font-size:0.75rem">© 2026 Heysky Energia Solar. Todos os direitos reservados. Projeto pessoal de Fabianogleite.</p>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+// ── CALCULADORA SOLAR ──
+(function() {
+  var btn = document.getElementById('calc-btn');
+  var inp = document.getElementById('conta-valor');
+  var tipo = document.getElementById('tipo-consumo');
+  var results = document.getElementById('calc-results');
+  var waBtn = document.getElementById('calc-wa-btn');
+
+  function fmt(n) { return 'R$ ' + Math.round(n).toLocaleString('pt-BR'); }
+
+  function calcular(conta) {
+    var t = tipo.value;
+    var reducao = t === 'comercial' ? 0.82 : t === 'rural' ? 0.88 : 0.92;
+    var fatorCusto = t === 'comercial' ? 38 : t === 'rural' ? 32 : 42;
+    var eco = conta * reducao;
+    var ecoAnual = eco * 12;
+    var custo = Math.max(conta * fatorCusto, 12000);
+    var payback = custo / ecoAnual;
+    var co2 = Math.round((conta / 0.80) * 0.000507 * 12 * 1000) / 1000;
+    return { eco: eco, ecoAnual: ecoAnual, payback: payback, co2: co2, custo: custo };
+  }
+
+  btn.addEventListener('click', function() {
+    var conta = parseFloat(inp.value) || 400;
+    if (conta < 100) { conta = 100; inp.value = conta; }
+    var r = calcular(conta);
+    document.getElementById('eco-mensal').textContent = fmt(r.eco);
+    document.getElementById('eco-anual').textContent = fmt(r.ecoAnual);
+    document.getElementById('payback-anos').textContent = r.payback.toFixed(1) + ' anos';
+    document.getElementById('co2-evitado').textContent = r.co2.toFixed(1) + ' t';
+    results.classList.add('show');
+    var msg = 'Quero+orçamento+solar:+conta+de+R$+' + Math.round(conta) + ',+economia+estimada+R$+' + Math.round(r.eco) + '/mês';
+    waBtn.href = 'https://wa.me/5531983140497?text=' + msg;
+    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  inp.addEventListener('keydown', function(e) { if (e.key === 'Enter') btn.click(); });
+})();
+
+// ── SECTION TRACKER (dwell time) ──
+const _sections = ['hero','numeros','como-funciona','sistemas','retorno','beneficios','faq'];
+const _times = {}, _starts = {};
+const _trackObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const id = e.target.dataset.section || e.target.id;
+    if (!id) return;
+    if (e.isIntersecting) { _starts[id] = Date.now(); }
+    else if (_starts[id]) { _times[id] = (_times[id]||0) + Date.now() - _starts[id]; delete _starts[id]; }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-section]').forEach(el => _trackObs.observe(el));
+window.getProteOSContext = () => {
+  Object.keys(_starts).forEach(id => { _times[id] = (_times[id]||0) + Date.now() - _starts[id]; });
+  const sorted = Object.entries(_times).sort((a,b)=>b[1]-a[1]);
+  const labels = { hero:'calculadora/início', numeros:'números/impacto', 'como-funciona':'instalação', sistemas:'tipo de sistema', retorno:'payback/retorno', beneficios:'benefícios', faq:'dúvidas' };
+  return { topInterest: sorted[0] ? labels[sorted[0][0]] || sorted[0][0] : null, topInterestMs: sorted[0] ? sorted[0][1] : 0, all: sorted.map(([k,v])=>({ section: labels[k]||k, seconds: Math.round(v/1000) })) };
+};
+
+// ── PAYBACK BARS ANIMATE ON VISIBLE ──
+const pbObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.getElementById('pb-retorno').style.width = '22%';
+      document.getElementById('pb-energia').style.width = '88%';
+      document.getElementById('pb-val').style.width = '55%';
+      pbObs.disconnect();
+    }
+  });
+}, { threshold: 0.4 });
+const retornoEl = document.getElementById('retorno');
+if (retornoEl) pbObs.observe(retornoEl);
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-btn').setAttribute('aria-expanded','false'); });
+    if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+// ── PROTEОS SIDEBAR ──
+(function() {
+  var sb = document.getElementById('proteOS-sidebar');
+  var tab = document.getElementById('sidebar-tab');
+  var closeBtn = document.getElementById('sb-close');
+  var msgs = document.getElementById('sb-msgs');
+  var input = document.getElementById('sb-input');
+  var send = document.getElementById('sb-send');
+  var sbCalcInp = document.getElementById('sb-calc-inp');
+  var sbCalcGo = document.getElementById('sb-calc-go');
+  var sbCalcResult = document.getElementById('sb-calc-result');
+
+  function openSB()  { sb.classList.add('open'); }
+  function closeSB() { sb.classList.remove('open'); }
+  tab.addEventListener('click', () => sb.classList.contains('open') ? closeSB() : openSB());
+  closeBtn.addEventListener('click', closeSB);
+
+  // Mini calculadora na sidebar
+  sbCalcGo.addEventListener('click', function() {
+    var v = parseFloat(sbCalcInp.value) || 400;
+    var eco = Math.round(v * 0.92);
+    sbCalcResult.textContent = '💰 Economia estimada: R$ ' + eco.toLocaleString('pt-BR') + '/mês';
+    sbCalcResult.style.display = 'block';
+  });
+
+  var R = {
+    conta: { r: 'Para uma conta de R$ {v}, a economia estimada é R$ {eco}/mês. O payback fica em torno de {pb} anos. Quer receber uma proposta detalhada?', wa: 'Conta+de+R$+{v},+quero+proposta+de+solar' },
+    financiamento: { r: 'Financiamos em até 120x sem entrada. As parcelas ficam geralmente abaixo da sua conta atual. Aprovação em 24h. Quer simular?', wa: 'Quero+saber+sobre+financiamento+solar' },
+    tempo: { r: 'A instalação física leva 1–2 dias. A conexão à CEMIG leva 30–90 dias. A geração começa no dia da instalação!', wa: 'Prazo+de+instalação+solar' },
+    manutenção: { r: 'Manutenção mínima: limpeza 1–2x por ano. Painéis com 25 anos de garantia. Zero peças móveis.', wa: 'Manutenção+sistema+solar' },
+    default_: { r: 'Entendido! Para te ajudar melhor, qual é o valor médio da sua conta de luz?', wa: 'Quero+informações+sobre+energia+solar' }
+  };
+
+  function addMsg(text, type, ctaLink) {
+    var d = document.createElement('div');
+    d.className = 'sb-msg ' + type;
+    d.textContent = text;
+    if (ctaLink) {
+      var a = document.createElement('a');
+      a.className = 'sb-msg-cta'; a.href = ctaLink; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = '💬 Continuar no WhatsApp →';
+      d.appendChild(document.createElement('br'));
+      d.appendChild(a);
+    }
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
+
+  function botRespond(userText) {
+    var t = userText.toLowerCase();
+    var typing = addMsg('ProteOS está calculando...', 'sb-msg bot');
+    var r = R.default_;
+    var wa = 'Quero+informações+sobre+energia+solar';
+    var num = parseFloat(t.replace(/[^0-9,.]/g,'').replace(',','.'));
+
+    if (!isNaN(num) && num >= 100) {
+      var eco = Math.round(num * 0.92);
+      var pb = (num * 20 / (eco * 12)).toFixed(1);
+      var resp = R.conta.r.replace('{v}', Math.round(num).toLocaleString('pt-BR')).replace('{eco}', eco.toLocaleString('pt-BR')).replace('{pb}', pb);
+      var waLink = 'https://wa.me/5531983140497?text=' + R.conta.wa.replace('{v}', Math.round(num));
+      setTimeout(function() { typing.remove(); addMsg(resp, 'bot', waLink); }, 1200);
+      return;
+    }
+    if (/financ|parcel|entrada|crédito|créd/i.test(t)) r = R.financiamento;
+    else if (/tempo|prazo|quantos dias|quando/i.test(t)) r = R.tempo;
+    else if (/manut|limpe|garanti/i.test(t)) r = R.manutenção;
+    else {
+      var ctx = window.getProteOSContext ? window.getProteOSContext() : null;
+      var top = ctx && ctx.topInterest;
+      if (top && top !== 'calculadora/início') {
+        r = { r: 'Vi que você estava vendo ' + top + '. Posso detalhar esse ponto. Qual o valor da sua conta de luz?', wa: 'Dúvida+sobre+' + encodeURIComponent(top) };
+      }
+    }
+    setTimeout(function() {
+      typing.remove();
+      addMsg(r.r, 'bot', 'https://wa.me/5531983140497?text=' + r.wa);
+    }, 1200 + Math.random() * 500);
+  }
+
+  function sendMsg() {
+    var v = input.value.trim();
+    if (!v) return;
+    addMsg(v, 'user');
+    input.value = '';
+    botRespond(v);
+  }
+
+  send.addEventListener('click', sendMsg);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
+  setTimeout(() => { if (!sb.classList.contains('open')) openSB(); }, 90000);
+})();
+
+// ── SMART CTA ──
+(function() {
+  var cta = document.getElementById('smart-cta');
+  var btn = document.getElementById('scta-btn');
+  var title = document.getElementById('scta-msg-title');
+  var body = document.getElementById('scta-msg-body');
+  var closeBtn = document.getElementById('scta-close');
+  var dismissed = false;
+  closeBtn.addEventListener('click', () => { dismissed = true; cta.classList.remove('visible'); });
+
+  var CTX = {
+    hero: { t: 'Calcule sua economia agora', b: 'Simulação gratuita, sem compromisso.', wa: 'Quero+simulação+de+economia+solar' },
+    'como-funciona': { t: 'Instalação em 2 dias', b: 'Orçamento grátis, aprovação em 24h.', wa: 'Quero+orçamento+instalação+solar' },
+    sistemas: { t: 'Qual sistema é ideal para você?', b: 'Residencial, comercial ou rural — simulamos agora.', wa: 'Qual+sistema+solar+é+ideal+para+mim' },
+    retorno: { t: 'Seu dinheiro trabalhando por você', b: 'Payback de 4–6 anos. 25 anos de lucro.', wa: 'Quero+calcular+o+retorno+do+solar' },
+    faq: { t: 'Ficou com dúvida?', b: 'Falo com você agora no WhatsApp.', wa: 'Tenho+dúvidas+sobre+energia+solar' },
+  };
+
+  var current = 'hero';
+  var HIGH = new Set(['sistemas','retorno','faq']);
+  var startTime = Date.now();
+  var shown = false;
+
+  var secObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) current = e.target.dataset.section || e.target.id; });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-section]').forEach(el => secObs.observe(el));
+
+  function show() {
+    if (dismissed || shown) return;
+    var ctx = CTX[current] || CTX.hero;
+    title.textContent = ctx.t;
+    body.textContent = ctx.b;
+    btn.href = 'https://wa.me/5531983140497?text=' + ctx.wa;
+    cta.classList.add('visible');
+    shown = true;
+    setTimeout(() => { cta.classList.remove('visible'); }, 10000);
+  }
+
+  setTimeout(() => { if (!shown) show(); }, 45000);
+  setTimeout(() => { if (HIGH.has(current) && !shown) show(); }, 25000);
+  window.addEventListener('scroll', function() {
+    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (pct > 0.7 && Date.now() - startTime > 30000 && !shown) show();
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
